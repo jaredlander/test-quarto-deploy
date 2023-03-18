@@ -1,0 +1,57 @@
+project:
+  type: website
+  execute-dir: project
+  resources: www
+
+website:
+  title: "Lethal Drifter"
+  description: "Location Intelligence"
+  search: false
+  navbar:
+    background: primary
+    collapse-below: lg
+    # title: "<a id='nav-logo' href='/index.html'><img src='www/images/logo_lethal_drifters.png'></a> Lethal<br>Drifters"
+    # right:
+    # - href: "https://www.landeranalytics.com/"
+    #   text: "<img src='www/images/logo_lander_bw.png'>"
+    left:
+      - href: index.qmd
+        text: Movements
+      - href: map.qmd
+        text: Map
+      # - href: travelers.qmd
+      #   text: Travelers
+      # - href: bed_downs.qmd
+      #   text: Bed Downs
+      # - href: alerts.qmd
+      #   text: Alerts
+      # - href: statistics.qmd
+      #   text: Statistics
+      # - href: id_list.qmd
+      #   text: ID List
+  favicon: www/images/lander_analytics_sticker.png
+  # page-footer:
+  #   right: "<a href='https://www.landeranalytics.com/'><img src='www/images/logo_lander_bw.png'></a>"
+
+format:
+  html:
+    # include-after-body: 
+    #   - text: <script type="text/javascript" src="www/js/newTab.js"></script>
+    theme: cosmo
+    # css: ['styles.css', 'www/css/custom.css']
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    page-layout: custom
+
+editor: source
+
+execute: 
+  echo: false
+  cache: false
+
+knitr:
+  opts_chunk:
+    message: false
+    warning: false
+    autodep: true

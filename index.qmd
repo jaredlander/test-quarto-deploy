@@ -1,0 +1,10 @@
+---
+title: "Greetings"
+params:
+  name: "Hal"
+---
+
+```{r}
+glue::glue("Greetings {params$name}")
+```
+

@@ -1,0 +1,30 @@
+---
+title: "Hoods"
+params:
+  City: "New York"
+---
+
+```{r}
+glue::glue("Neighborhoods in {params$City}")
+```
+
+```{r}
+library(leaflet)
+library(leafgl)
+```
+
+```{r}
+hoods <- sf::read_sf("https://jaredlander.com/data/NYC-Neighborhood-Tabulation-Areas.geojson")
+```
+
+```{r}
+leaflet(elementId = 'plain')|> 
+  addTiles()|> 
+  addPolygons(data=hoods)
+```
+
+```{r}
+leaflet(elementId = 'glif')|> 
+  addTiles()|> 
+  addGlPolygons(data=hoods |> sf::st_cast("POLYGON"), fillColor = 'BoroName')
+```
